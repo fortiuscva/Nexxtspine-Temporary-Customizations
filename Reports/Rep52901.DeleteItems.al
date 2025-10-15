@@ -1,15 +1,14 @@
-report 52900 "Delete Sales Order Document"
+report 52901 "NTS Delete Items"
 {
     ApplicationArea = All;
-    Caption = 'Delete Sales Order Document';
+    Caption = 'Delete Items';
     UsageCategory = ReportsAndAnalysis;
-    ProcessingOnly = true;
-
     dataset
     {
-        dataitem(SalesHeader; "Sales Header")
+        dataitem(Item; Item)
         {
-            RequestFilterFields = "No.";
+            RequestFilterFields = "No.", SystemCreatedAt;
+
             trigger OnPreDataItem()
             var
                 StartDateTime: DateTime;
@@ -18,8 +17,9 @@ report 52900 "Delete Sales Order Document"
                 StartDateTime := CreateDateTime(Today, 000000T);
                 EndDateTime := CreateDateTime(Today + 1, 000000T);
 
-                SetRange("Document Type", "Document Type"::Order);
                 SetRange(SystemCreatedAt, StartDateTime, EndDateTime - 1);
+
+                ItemsCount := Item.Count;
             end;
 
             trigger OnAfterGetRecord()
@@ -29,8 +29,11 @@ report 52900 "Delete Sales Order Document"
 
             trigger OnPostDataItem()
             begin
-                Message('Sales Orders deleted.');
+                Message('Items deleted are %1', ItemsCount);
             end;
         }
     }
+
+    var
+        ItemsCount: Integer;
 }
