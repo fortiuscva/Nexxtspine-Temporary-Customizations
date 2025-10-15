@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Dev",
+            "request": "launch",
+            "type": "al",
+            "tenant": "d2d6e7c4-f146-4110-9f5d-619e5c984289",
+            "environmentType": "Sandbox",
+            "environmentName": "Dev",
+            "startupObjectId": 22,
+            "startupObjectType": "Page",
+            "breakOnError": "All",
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true,
+            "schemaUpdateMode": "ForceSync"
+        },
+        {
+            "name": "QCTEST",
+            "request": "launch",
+            "type": "al",
+            "tenant": "d2d6e7c4-f146-4110-9f5d-619e5c984289",
+            "environmentType": "Sandbox",
+            "environmentName": "QCTEST",
+            "startupObjectId": 22,
+            "startupObjectType": "Page",
+            "breakOnError": "All",
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true,
+            "schemaUpdateMode": "ForceSync"
+        }
+    ]
+}
