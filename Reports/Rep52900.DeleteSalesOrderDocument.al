@@ -9,7 +9,7 @@ report 52900 "Delete Sales Order Document"
     {
         dataitem(SalesHeader; "Sales Header")
         {
-
+            RequestFilterFields = "No.";
             trigger OnPreDataItem()
             var
                 SalesHeader: Record "Sales Header";
