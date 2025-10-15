@@ -3,6 +3,8 @@ report 52901 "NTS Delete Items"
     ApplicationArea = All;
     Caption = 'Delete Items';
     UsageCategory = ReportsAndAnalysis;
+    ProcessingOnly = true;
+
     dataset
     {
         dataitem(Item; Item)
