@@ -49,6 +49,17 @@ page 52900 "NTS Items Staging"
                     ImportItems();
                 end;
             }
+            action(DeleteItems)
+            {
+                Caption = 'Delete Items';
+                ApplicationArea = All;
+                Promoted = true;
+                PromotedCategory = Process;
+                PromotedIsBig = true;
+                Image = Process;
+                ToolTip = 'This action will delete the Items';
+                RunObject = report "NTS Delete Items Staging";
+            }
             action(UnflagProcessedFlag)
             {
                 Caption = 'Unflag Processed Lines';
