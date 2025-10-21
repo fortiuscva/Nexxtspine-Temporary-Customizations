@@ -8,6 +8,7 @@ report 52903 "NTS Delete Items Staging"
         dataitem(NTSItemStaging; "NTS Items Staging")
         {
             RequestFilterFields = "Item No.";
+            DataItemTableView = sorting("Entry No.") where(Processed = const(false));
             trigger OnAfterGetRecord()
             var
                 ItemRec: record Item;
@@ -24,6 +25,7 @@ report 52903 "NTS Delete Items Staging"
                     ItemsCount += 1;
                 end;
                 NTSItemStaging.Modify(true);
+                Commit();
             end;
 
             trigger OnPostDataItem()
