@@ -19,7 +19,6 @@ report 52903 "NTS Delete Items Staging"
                     NTSItemStaging."Processed" := false;
                     NTSItemStaging."Error Text" := ErrorTxtGbl;
                 end else begin
-                    ItemRec.Delete(true);
                     NTSItemStaging."Processed" := true;
                     NTSItemStaging."Error Text" := '';
                     ItemsCount += 1;
