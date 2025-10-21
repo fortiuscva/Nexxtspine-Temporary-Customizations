@@ -1,6 +1,5 @@
 report 52903 "NTS Delete Items Staging"
 {
-    ApplicationArea = All;
     Caption = 'Delete Items Staging';
     UsageCategory = ReportsAndAnalysis;
     ProcessingOnly = true;
@@ -11,10 +10,10 @@ report 52903 "NTS Delete Items Staging"
             RequestFilterFields = "Item No.";
             trigger OnAfterGetRecord()
             var
-                ItemRec: record Item
-            ;
+                ItemRec: record Item;
+                HandleExceptionsCU: Codeunit "NTS Handle Exceptions";
             begin
-                if not (ItemRec.Get(NTSItemStaging."Item No.")) then begin
+                if not HandleExceptionsCU.DeleteItems(NTSItemStaging."Item No.") then begin
                     ErrorTxtGbl := GetLastErrorText();
                     NTSItemStaging."Processed" := false;
                     NTSItemStaging."Error Text" := ErrorTxtGbl;
