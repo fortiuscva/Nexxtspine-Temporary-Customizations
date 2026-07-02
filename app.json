@@ -2,7 +2,7 @@
   "id": "85f3235d-1458-406d-b3a9-4f713f13bd2f",
   "name": "Nexxtspine Temporary Customizations",
   "publisher": "Adcirrus",
-  "version": "1.0.0.7",
+  "version": "1.0.0.8",
   "brief": "",
   "description": "",
   "privacyStatement": "",
@@ -10,7 +10,20 @@
   "help": "",
   "url": "",
   "logo": "",
-  "dependencies": [],
+  "dependencies": [
+      {
+      "id": "0a9a2776-4d2a-42a1-aca7-91b65a59e4ac",
+      "name": "NexxtSpine_StatusMod",
+      "version": "1.0.0.3",
+      "publisher": "Impact Networking"
+    },
+    {
+      "id": "e2a22fd6-cbb6-481a-9db0-d9c929773cf8",
+      "name": "NexxtSpineCustomFields",
+      "version": "1.0.0.0",
+      "publisher": "Impact Networking" 
+    }
+  ],
   "screenshots": [],
   "platform": "1.0.0.0",
   "application": "26.0.0.0",
