@@ -1,4 +1,4 @@
-codeunit 52901 "NTS Single Instance"
+codeunit 52901 "NTS Temp Single Instance"
 {
     SingleInstance = true;
     procedure SetHideDeleteItemTrackingConfirm(SuppressVar: Boolean)
