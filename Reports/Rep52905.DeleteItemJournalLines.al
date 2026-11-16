@@ -20,6 +20,6 @@ report 52905 "NTS Delete Item Journal Lines"
         }
     }
     var
-        SingleInstanceCU: Codeunit "NTS Single Instance";
+        SingleInstanceCU: Codeunit "NTS Temp Single Instance";
         ItemJnlLineReserve: Codeunit "Item Jnl. Line-Reserve";
 }
