@@ -16,6 +16,15 @@ codeunit 52902 "NTS Temp Events and Subscriber"
             DeleteItemTracking := true;
     end;
 
+    [EventSubscriber(ObjectType::Codeunit, Codeunit::"Gen. Jnl.-Post Batch", 'OnProcessBalanceOfLinesOnBeforeCheckLine', '', false, false)]
+    local procedure SkipAccruedRevenueBalanceCheck(GenJournalLine: Record "Gen. Journal Line"; var IsHandled: Boolean)
+    begin
+        if (GenJournalLine."Journal Template Name" = 'GENERAL') and
+           (GenJournalLine."Journal Batch Name" = 'ACCRUEDREV')
+        then
+            IsHandled := true;
+    end;
+
     var
         NexxtSingleInstance: Codeunit "NTS Temp Single Instance";
 }
